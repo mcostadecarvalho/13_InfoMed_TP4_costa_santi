@@ -17,7 +17,7 @@ La base de datos dada no está normalizada. Una base de datos está normalizada 
 ---
 
 # Parte 2: SQL
-## Consulta 01
+## Query 01
 
 Se hace un index para mejorar la búsqueda de los pacientes agrupados por ciudad. Además hace una función en para eliminar el índice y verificar que ha sido creado y además se hace una función para que se muestren todos los índices de la base de datos.
 
@@ -35,7 +35,7 @@ WHERE schemaname = 'public';
 ![Resultado 01 no encontrado!](img/01_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 02
+## Query 02
 
 ```
 SELECT id_paciente, nombre, fecha_nacimiento,
@@ -50,7 +50,7 @@ FROM pacientes;
 ![Resultado 02 no encontrado!](img/02_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 03
+## Query 03
 
 ```
 UPDATE pacientes
@@ -65,7 +65,7 @@ WHERE nombre = 'Luciana Gómez'
 ![Resultado 03 no encontrado!](img/03_InfoMed_TP4_CostaSanti.png)
 
 ---
-### Consulta 04
+### Query 04
 
 ```
 SELECT nombre, matricula
@@ -76,7 +76,7 @@ WHERE especialidad_id = 4;
 ![Resultado 04 no encontrado!](img/04_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 05
+## Query 05
 
 En esta operación se modifica la base de datos. Se usan dos veces la función update una primera para modificar los registros en la columna ciudad de la tabla de pacientes. Luego se usa la función update nuevamente para comparar estos mismos datos para comparar con una tabla de referencia creada con el nombre correcto de las ciudades. Esta última función verifica la coincidencia para asignar los nombres correctos para corregir la inconsistencia en estos datos. 
 
@@ -125,7 +125,7 @@ WHERE EXISTS (
 ![Resultado 05 no encontrado!](img/05_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 06
+## Query 06
 
 ```
 SELECT nombre, calle, numero, ciudad
@@ -136,7 +136,7 @@ WHERE ciudad = 'Buenos Aires';
 ![Resultado 06 no encontrado!](img/06_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 07
+## Query 07
 
 ```
 SELECT p.ciudad AS ciudad, COUNT(*) AS cantidad
@@ -154,7 +154,7 @@ ORDER BY cantidad DESC;
 ![Resultado 07 no encontrado!](img/07_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 08
+## Query 08
 
 ```
 SELECT p.ciudad AS ciudad, s.descripcion AS sexo, COUNT(*) AS cantidad
@@ -167,7 +167,7 @@ ORDER BY ciudad, sexo;
 ![Resultado 08 no encontrado!](img/08_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 09
+## Query 09
 
 ```
 SELECT m.nombre, COUNT(r.id_receta) AS cantidad_recetas
@@ -183,7 +183,7 @@ ORDER BY cantidad_recetas DESC;
 ![Resultado 09 no encontrado!](img/09_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 10
+## Query 10
 
 ```
 SELECT *
@@ -194,7 +194,7 @@ WHERE id_medico = 3 AND fecha BETWEEN '2024-08-01' AND '2024-08-31';
 ![Resultado 10 no encontrado!](img/10_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 11
+## Query 11
 
 ```
 SELECT p.nombre AS nombre_paciente, c.fecha, c.diagnostico
@@ -209,7 +209,7 @@ ORDER BY c.fecha;
 ![Resultado 11 no encontrado!](img/11_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 12
+## Query 12
 
 ```
 SELECT m.nombre AS nombre_medicamento, COUNT(*) AS veces_prescrito
@@ -224,7 +224,7 @@ ORDER BY veces_prescrito DESC;
 ![Resultado 12 no encontrado!](img/12_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 13
+## Query 13
 
 ```
 SELECT p.id_paciente AS id_pacintes, p.nombre AS nombres, COUNT(r.id_receta) AS cantidad_recetas
@@ -237,7 +237,7 @@ ORDER BY cantidad_recetas DESC;
 ![Resultado 13 no encontrado!](img/13_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 14
+## Query 14
 
 ```
 WITH cantidad_recetas AS (
@@ -254,7 +254,7 @@ WHERE total = (SELECT MAX(total) FROM cantidad_recetas);
 ![Resultado 14 no encontrado!](img/14_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 15
+## Query 15
 
 ```
 SELECT p.nombre AS nombre_paciente, c.fecha, c.diagnostico
@@ -267,7 +267,7 @@ ORDER BY p.nombre;
 ![Resultado 15 no encontrado!](img/15_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 16
+## Query 16
 
 ```
 SELECT m.nombre AS nombre_medico, p.nombre AS nombre_paciente, COUNT(*) AS total_consultas
@@ -281,7 +281,7 @@ ORDER BY m.nombre, p.nombre;
 ![Resultado 16 no encontrado!](img/16_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 17
+## Query 17
 
 ```
 SELECT med.nombre AS medicamento, COUNT(*) AS total_recetas, 
@@ -297,7 +297,7 @@ ORDER BY total_recetas DESC;
 ![Resultado 17 no encontrado!](img/17_InfoMed_TP4_CostaSanti.png)
 
 ---
-## Consulta 18
+## Query 18
 
 ```
 SELECT m.nombre AS nombre_medico, COUNT(DISTINCT c.id_paciente) AS total_pacientes
