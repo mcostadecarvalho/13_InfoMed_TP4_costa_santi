@@ -12,7 +12,7 @@ La base de datos e una de tipo SQL. Los datos están organizados en formato de t
 Aclaramos que para los ejercicios 2 y 3 la realización del Diagrama Entidad-Relación y el Modelo Lógico se optó por hacer una nueva implemantación en base a los requerimientos sin hacer una nueva base de datos. Para eso tuvimos en cuenta la nota que daba la libertad de resolver de forma distinta a los pedidos. 
 
 ## 4. Normalización
-La base de datos dada no está normalizada. Una base de datos está normalizada cuando se ha eliminado las redundancias, inconsistencias y logrado integridad de los datos. Al comparar las tablas de consultas y recetas se ve que ambas tablas tienen su identificador único las claves foráneas de id_medicos e id_pacientes pero además están en ambas tablas están los valores de fecha. Por lo que se ve que los datos están repetidos, por lo que se debería depurar estas tablas. 
+La base de datos dada no está normalizada. Una base de datos está normalizada cuando se ha eliminado las redundancias, inconsistencias y logrado integridad de los datos. Al comparar las tablas de consultas y recetas se ve que ambas tablas tienen su identificador único las claves foráneas de id_medicos e id_pacientes pero además en ambas tablas están los valores de fecha. Por lo que se ve que los datos están repetidos, y por ende se debería depurar estas tablas. 
 
 ---
 
